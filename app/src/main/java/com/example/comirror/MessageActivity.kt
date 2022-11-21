@@ -13,7 +13,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage
 class MessageActivity : Activity() {
 
     private lateinit var binding: ActivityMessageBinding
-    val ServerIP:String = "tcp://192.168.0.254:1883"  //1번 서버 IP
+    val ServerIP:String = "tcp://192.168.0.16:1883"  //1번 서버 IP
     val TOPIC:String = "TopicName"
 
     override fun onCreate(savedInstanceState: Bundle?) {
