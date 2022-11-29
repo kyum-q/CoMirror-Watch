@@ -27,6 +27,12 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         if (remoteMessage.notification != null) {
             sendNotification(remoteMessage.notification?.title, remoteMessage.notification!!.body!!)
         }
+
+        val map = mutableMapOf<String, Any>()
+        map["messageContent"] = remoteMessage.notification!!.body!!
+
+        FirebaseFirestore.getInstance().collection("message").document().update(map)
+
         System.out.println("##################################### MESSAGE")
     }
 

@@ -1,16 +1,16 @@
 package com.example.comirror
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import com.example.comirror.databinding.ActivityMainBinding
 import com.example.comirror.databinding.ActivityMessageBinding
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken
 import org.eclipse.paho.client.mqttv3.MqttCallback
 import org.eclipse.paho.client.mqttv3.MqttClient
 import org.eclipse.paho.client.mqttv3.MqttMessage
 
-class MessageActivity : Activity() {
+class MessageActivity(intent: Intent) : Activity() {
 
     private lateinit var binding: ActivityMessageBinding
     val ServerIP:String = "tcp://192.168.0.16:1883"  //1번 서버 IP
