@@ -23,15 +23,7 @@ class MessageActivity : Activity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMessageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Data push는 이렇게 하면 될듯
-        //val data = MessageDTO("1001", "유송연","메시지")
-        // {
-        // messageDataList.add(data)
-        // Log.d("song-parsing",gson.toJson(messageDataList,groupListType))
-        // MirrorApplication.prefs.setString("message", gson.toJson(messageDataList,groupListType))
-        // }
         initData()
-
     }
 
     fun initData(){
