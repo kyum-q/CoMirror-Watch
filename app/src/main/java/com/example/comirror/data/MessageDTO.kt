@@ -1,6 +1,6 @@
 package com.example.comirror.data
 
-data class MessageModel(
+data class MessageDTO(
         var sendId: String="",
         var senderName: String="",
         var content: String="",
