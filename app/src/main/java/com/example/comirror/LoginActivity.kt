@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.example.comirror.databinding.ActivityLoginBinding
+import com.example.comirror.home.MainActivity
 
 class LoginActivity : Activity() {
 
