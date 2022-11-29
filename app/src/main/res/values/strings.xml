@@ -13,5 +13,6 @@
     <string name="previous">Previous</string>
 
     <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
 
 </resources>
