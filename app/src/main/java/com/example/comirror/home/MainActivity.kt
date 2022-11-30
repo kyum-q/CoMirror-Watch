@@ -23,7 +23,7 @@ import java.lang.reflect.Type
 class MainActivity : Activity() {
     private lateinit var binding: ActivityMainBinding
 
-    val ServerIP:String = "tcp://172.30.1.41:1883" //서버 IP
+    val ServerIP:String = "tcp://192.168.0.16:1883" //서버 IP
     val TOPIC:String = "watch/4004"
 
     val gson = GsonBuilder().create() // json을 object로 변환해줌
