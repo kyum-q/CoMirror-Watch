@@ -36,7 +36,8 @@ class MainActivity : Activity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        getFCMToken()
+
+        //getFCMToken()
 
         binding.settingBtn.setOnClickListener {
             startActivity(Intent(this, SettingActivity::class.java))
@@ -93,7 +94,6 @@ class MainActivity : Activity() {
     private fun getFCMToken(): String?{
         var token: String? = null
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-
             // Get new FCM registration token
             token = task.result
 
@@ -105,7 +105,6 @@ class MainActivity : Activity() {
 
             FirebaseFirestore.getInstance().collection("pushTokens").document("Token").set(map)
         })
-
         return token
     }
 }
