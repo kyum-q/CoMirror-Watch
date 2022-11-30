@@ -23,7 +23,7 @@ import java.lang.reflect.Type
 class MainActivity : Activity() {
     private lateinit var binding: ActivityMainBinding
 
-    val ServerIP:String = "tcp://192.168.0.16:1883" //서버 IP
+    val ServerIP:String = "tcp://192.168.0.2:1883" //서버 IP
     val TOPIC:String = "watch/4004"
 
     val gson = GsonBuilder().create() // json을 object로 변환해줌
@@ -70,11 +70,15 @@ class MainActivity : Activity() {
                 }
                 //현재 데이터 넣기
                 var currData = gson.fromJson(p1.toString(),MessageDTO::class.java)
-                messageDataList.add(currData)
-                Log.d("songsong", messageDataList.toString())
+                if (!(messageDataList.contains(currData))) {
+                    messageDataList.add(currData)
+                    Log.d("songsong", messageDataList.toString())
 
-                MirrorApplication.prefs.setString("message", gson.toJson(messageDataList,groupListType))
-
+                    MirrorApplication.prefs.setString( // update
+                        "message",
+                        gson.toJson(messageDataList, groupListType)
+                    )
+                }
             }
 
             override fun deliveryComplete(p0: IMqttDeliveryToken?) {
